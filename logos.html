@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .root {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2%;
+        }
+
+        .image-icon {
+            width: 8%;
+            text-align: center;
+            padding: 8px;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .image-icon img {
+            width: 100%;
+        }
+
+        .title {
+            font-size: 16px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="root">
+
+    </div>
+
+
+    <script>
+        var getLogo = function (imgUrl, name) {
+            let formattedName = name.toLocaleLowerCase().replaceAll(' ', '-')
+            let template = `<div class="image-icon">
+                                <img src="${imgUrl}"
+                                    alt="logo">
+                                <p class="title">${formattedName}</p>
+                            </div>`
+
+            return template
+        }
+
+        function bindData() {
+            let bin = document.querySelector('.root');
+            let finalData = "";
+            logosData.forEach(item => {
+                let listItem = getLogo(item["post_placement_company_logo"], item["post_placement_company"]);
+                finalData += listItem;
+            })
+
+            bin.innerHTML = finalData
+        }
+
+        window.addEventListener('load', function () {
+            bindData();
+        })
+        var logosData = [
+            {
+                "post_placement_company": "Dell Technologies",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHd5Km8_W6GVA/company-logo_400_400/0/1614178926580?e=1677110400&v=beta&t=vb8qsGcmMor-fCTv_rAoQN_q54GImPUtcMxvYA-BvkI"
+            },
+            {
+                "post_placement_company": "Wells Fargo",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQGLxWPpGqaVmw/company-logo_400_400/0/1607533344544?e=1678924800&v=beta&t=YbWW9xY5B_2LWiwepqvQthzfWwiccAahggCzMXqfdoI"
+            },
+            {
+                "post_placement_company": "EY",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQGpRhkpxp5A9A/company-logo_400_400/0/1561962168715?e=1678924800&v=beta&t=KSAv0ymUsVWU0au_9HR7rGrFjpYlUq5ryv3nzygg9Os"
+            },
+            {
+                "post_placement_company": "WhiteHat Jr",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQFLb50MjbgEbA/company-logo_400_400/0/1640247611301?e=1678924800&v=beta&t=eeOe43B2Zp_pdp8sv89QZBqfORqPaUbNupbSYlvJ0vs"
+            },
+            {
+                "post_placement_company": "Wipro Limited",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQEOkjRmtlk0Ow/company-logo_400_400/0/1667935599324?e=1678924800&v=beta&t=hk5u6oAUhmir32_1ddVsXKVLVl6yXWB5t8C1tndOr-0"
+            },
+            {
+                "post_placement_company": "Texas A&M University",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQH0AwblDTN6-g/company-logo_400_400/0/1519855923386?e=1678924800&v=beta&t=lO3-4ELeR0SB_bPRrws9-bsd3G0Xp189hD0zXy_APk4"
+            },
+            {
+                "post_placement_company": "Genpact",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQEnq2MaCsZmTw/company-logo_400_400/0/1656642610406?e=1678924800&v=beta&t=Yk3mA_u-VJ_nAdKMYbLgdK047eCRyWO9ADITmc4FLUs"
+            },
+            {
+                "post_placement_company": "Deloitte Consulting",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGNtpblgQpJoQ/company-logo_400_400/0/1662120927694?e=1678924800&v=beta&t=AHHRb4dWszpLvTL4ct_RNQFwkeDo8naP_vJBAeeQTCo"
+            },
+            {
+                "post_placement_company": "Capgemini",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQFWzOAVgGjUUA/company-logo_400_400/0/1641979388362?e=1678924800&v=beta&t=AAECbYn9MyAHtALH3WV5Jf2rvZ-s8R9wHVhN2dKNGiM"
+            },
+            {
+                "post_placement_company": "Virtusa",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHUnyI5clnOrA/company-logo_400_400/0/1594675990525?e=1678924800&v=beta&t=MzelAcqeNllx9Wjr4GjzNdJbf9yGzqLjS9SowG4DGwo"
+            },
+            {
+                "post_placement_company": "Insurjo",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D4D0BAQGko22zCpnyKQ/company-logo_400_400/0/1663334312593?e=1678924800&v=beta&t=qj-l7nHFt4296EkuAkuJ2cjEh3l5SMoWjYxeiNg9hTU"
+            },
+            {
+                "post_placement_company": "Tata Communications",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQG6kp-RlIZfoA/company-logo_400_400/0/1542010670943?e=1678924800&v=beta&t=ywp-5Clh-dYWtq7Fp79i5H3b4H8PR8VfQcN2YBFjntw"
+            },
+            {
+                "post_placement_company": "Encora Inc.",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHHECNoVhv0HA/company-logo_400_400/0/1663783800918?e=1678924800&v=beta&t=h-AHUGnbvPnTGcS-koi8QQT9TxHj6PRoP78NtsGFOkY"
+            },
+            {
+                "post_placement_company": "Pfizer",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQEUCiJbdLnjlQ/company-logo_400_400/0/1659639759698?e=1678924800&v=beta&t=auHX77BPUFJyWX7woUchqyUA0uwJUaGpSxwuqoaDf5w"
+            },
+            {
+                "post_placement_company": "AT&T",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQE6Wr9RUG3OuA/company-logo_400_400/0/1533066385525?e=1678924800&v=beta&t=uNN4yKjTb-uQtYv5x8kTTg_jmvMX_sgvUovaDciN61s"
+            },
+            {
+                "post_placement_company": "Citi",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQF1Y797wT1sRg/company-logo_400_400/0/1656644024034?e=1678924800&v=beta&t=HQFij1g1CApOB3beSExD1NP9FHP7Uq4uCKaMuX4HpoM"
+            },
+            {
+                "post_placement_company": "Flex",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D560BAQEWLl62lRPKQQ/company-logo_400_400/0/1665959466481?e=1678924800&v=beta&t=_p48B-xeU4f4Mus1NZ7OWipuz2yVPtnNv9QBy9bJlbE"
+            },
+            {
+                "post_placement_company": "Publicis Sapient",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFJ1mxjVEoZGw/company-logo_400_400/0/1658952736311?e=1678924800&v=beta&t=_UUdx-duMJRxh36ETXNC_40-KJ7wEZ93oLlEGR1aeN0"
+            },
+            {
+                "post_placement_company": "Sitel",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHnRuMgJMqW-A/company-logo_400_400/0/1664196133318?e=1678924800&v=beta&t=VMZ9Rj5yuCGQwpandS9THUYAbHzVpYECAL1wDFqdnz0"
+            },
+            {
+                "post_placement_company": "Applied Materials",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGfr5o3K2rRFA/company-logo_400_400/0/1634680422433?e=1678924800&v=beta&t=h4_FAJYvoSALBZesmz2ePpFUnnzXRhzPasyp4_HcJzU"
+            },
+            {
+                "post_placement_company": "Microsoft",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQE88xCsONDULQ/company-logo_400_400/0/1618231291419?e=1678924800&v=beta&t=_JO1bNS-_5N8_Ieb5pRfTyVnD_EEH5GLShGIt6bRndc"
+            },
+            {
+                "post_placement_company": "Evalueserve",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQE5H5cpQSgl3g/company-logo_400_400/0/1657059438673?e=1678924800&v=beta&t=89a4OcHK5RhqI7W69TtmiAoDMKNmhQzvW0kUVF231Co"
+            },
+            {
+                "post_placement_company": "Verizon",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHAiVb75wIpDQ/company-logo_400_400/0/1645721742845?e=1678924800&v=beta&t=wecbESZo6u90LgKTsuNeDhVvHhZcRPLr_YbQDNkuOIQ"
+            },
+            {
+                "post_placement_company": "Credit Suisse",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHszQ7sfR8SEw/company-logo_400_400/0/1653986123175?e=1678924800&v=beta&t=pd_KvLBOtHZkzh7LLIhwOImdfmMzfSFOZP2tB0Jb5t8"
+            },
+            {
+                "post_placement_company": "HDFC Bank",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQGqZH7vVbVzWw/company-logo_400_400/0/1575691221856?e=1678924800&v=beta&t=CnPyvf3K-h8W86WbelUE4yJ2DcotwSKsn6AX-m9dnkU"
+            },
+            {
+                "post_placement_company": "Optum",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHdrlSaovAAAQ/company-logo_400_400/0/1638252365744?e=1678924800&v=beta&t=Wr3P6OA1s4dmxDu4ZTMgmVU6ZBbGciu8Omy0s8VphvU"
+            },
+            {
+                "post_placement_company": "Rio Tinto",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQF7YfIekN6D0w/company-logo_400_400/0/1652829934676?e=1678924800&v=beta&t=R5ELU-MLtP2ci2ZSN006rVXcrFr7E3hJ7yad67o_3FI"
+            },
+            {
+                "post_placement_company": "Teleperformance",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D4D0BAQGXrPuNy-Neuw/company-logo_400_400/0/1667389747551?e=1678924800&v=beta&t=9-0nbgp3ivji7hSUiBXsWeZ1qsufZy44hwhdFcz0CCU"
+            },
+            {
+                "post_placement_company": "Mindtree",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQHTWmlRNCPPAA/company-logo_400_400/0/1566913884488?e=1678924800&v=beta&t=CmAqfb6qM_KzeotxlbYFzyfQHJv3yVD6kMBA3XesmDY"
+            },
+            {
+                "post_placement_company": "Ugam",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFqsyPGg8alHA/company-logo_400_400/0/1591183248246?e=1676505600&v=beta&t=qybzF9OviIGHHeTftkE2ebwtuLygu8O8G198GC6CFKY"
+            },
+            {
+                "post_placement_company": "Capgemini Engineering",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQGcNoU1nVm4Wg/company-logo_400_400/0/1617853380354?e=1678924800&v=beta&t=wq7OgIkW-P7U1bhLU2mkQMUQO_hXi35paBKhtONS8tI"
+            },
+            {
+                "post_placement_company": "HCL Technologies",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQF-RIoeeMTMKQ/company-logo_400_400/0/1664197007563?e=1678924800&v=beta&t=4uA49VaHBlR5nmcSVBRVHmAhAC87-zB5ZnDJXEj8JCM"
+            },
+            {
+                "post_placement_company": "EXL",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQGpN0gkHFhYTA/company-logo_400_400/0/1656604075362?e=1678924800&v=beta&t=hYVig96k4g4KibYqqtyB8Rd0ml6N_IsiMAc9A55JbQw"
+            },
+            {
+                "post_placement_company": "VMware",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGRwuYZeI6aaA/company-logo_400_400/0/1588094413060?e=1678924800&v=beta&t=_gwW5g6kXGLI4CySUx8Tu08iz6B4ujtxn0vzW17vZqU"
+            },
+            {
+                "post_placement_company": "KPMG US",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQEU7SOLxePw0w/company-logo_400_400/0/1659971265669?e=1678924800&v=beta&t=y2NbKK25lH95Gghiq-BiEJ1HngJz_ZD6cVtiKc5pyRs"
+            },
+            {
+                "post_placement_company": "Freshworks",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D560BAQE91pHKG3yvnw/company-logo_400_400/0/1666790263124?e=1678924800&v=beta&t=MjA_vSPoekXgRjXQqcIe3-cph9NdapllM7wg8ENyjq4"
+            },
+            {
+                "post_placement_company": "State Bank of India",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHKjQFwtVCmSg/company-logo_400_400/0/1660627572115?e=1678924800&v=beta&t=OwYRR2wGg5UTp7pWWgOjyV-QHz4kLVpySw9kn5HFlk0"
+            },
+            {
+                "post_placement_company": "Concentrix",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQH06vjzGkJPQQ/company-logo_400_400/0/1547217591253?e=1678924800&v=beta&t=fYcIUf1ScPzPk-YsgANgwQY77DrJH3WjbgL8TNgG4BQ"
+            },
+            {
+                "post_placement_company": "Cipla",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHdJqqo7Zh-bw/company-logo_400_400/0/1519856605126?e=1678924800&v=beta&t=9uIkdbQQkaA7fTYC8cFv6fxClU11ynV8A90G-ilj1bQ"
+            },
+            {
+                "post_placement_company": "Ford Motor Company",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHZnQf3t8fKKg/company-logo_400_400/0/1620306010588?e=1678924800&v=beta&t=r9TNrm0cGuqiYuv5lacXYrRu-jmqSsFBTT3HrdZEPTM"
+            },
+            {
+                "post_placement_company": "Fractal",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQFLRyQ6olfOcg/company-logo_400_400/0/1661143039579?e=1678924800&v=beta&t=sMCNce7614C1d5jz9UcBKmHDQNjUt2f-V_1fWGRMjck"
+            },
+            {
+                "post_placement_company": "Deloitte India (Offices of the US)",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGNtpblgQpJoQ/company-logo_400_400/0/1662120927694?e=1678924800&v=beta&t=AHHRb4dWszpLvTL4ct_RNQFwkeDo8naP_vJBAeeQTCo"
+            },
+            {
+                "post_placement_company": "Milkbasket",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGaSibDv-76tg/company-logo_400_400/0/1519884323551?e=1678924800&v=beta&t=lT9Pfo-kPaytDiY6Q71VFek8CvrhK9c2ua_ZSnOkNXE"
+            },
+            {
+                "post_placement_company": "Oracle",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D4E0BAQHYCgYovUuPtQ/company-logo_400_400/0/1665755678671?e=1677110400&v=beta&t=3fRxaT8aEBwFwEZU-GFfrm7_hF8pReagr4g8Ue_z8lg"
+            },
+            {
+                "post_placement_company": "Oracle india pvt Ltd",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D4E0BAQHYCgYovUuPtQ/company-logo_400_400/0/1665755678671?e=1677110400&v=beta&t=3fRxaT8aEBwFwEZU-GFfrm7_hF8pReagr4g8Ue_z8lg"
+            },
+            {
+                "post_placement_company": "Standard Chartered Bank",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQFIXBBXX9EX-Q/company-logo_400_400/0/1656579431817?e=1678924800&v=beta&t=w9JgU5YV6nSKc-4ZtMTWyVQwTV5Rbc1ux6YjlVWkj90"
+            },
+            {
+                "post_placement_company": "Quantiphi",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQF4coMv78O4Mw/company-logo_400_400/0/1656921184919?e=1678924800&v=beta&t=Z8tn9SpQSu9XYOi1P346vCh54INWWjGzFISFdajyBv4"
+            },
+            {
+                "post_placement_company": "Accenture AI",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHxpX1l8Av2Dg/company-logo_400_400/0/1659035932009?e=1676505600&v=beta&t=nVK1sGyOnxgFOQ_wwMzEDKlFjlfXDFtrNoZOhc97hKs"
+            },
+            {
+                "post_placement_company": "Alteryx",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHnOfqF93525A/company-logo_400_400/0/1656686480155?e=1678924800&v=beta&t=FCoZM630LKX7vHfCPkcK5nrRDCtBYEzXbcobEH7M26o"
+            },
+            {
+                "post_placement_company": "Google",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHiNSL4Or29cg/company-logo_400_400/0/1519856215226?e=1678924800&v=beta&t=E_Dzi1jPVdN-hHB-Vxj8P5sQGb6zwDGJQ3BaRjajdi8"
+            },
+            {
+                "post_placement_company": "State Street",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGecL-rcPynOg/company-logo_400_400/0/1657057575736?e=1678924800&v=beta&t=WlwJHyznb16-4x_tOuKHSk0PGIX8lvZqSOhpOx2gd80"
+            },
+            {
+                "post_placement_company": "Goldman Sachs",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHm5bYK6emQSg/company-logo_400_400/0/1595518030728?e=1678924800&v=beta&t=ST_cfymxA1t8CIyMtXN8YRtfkHZibZnQ3DQVJPO3kBo"
+            },
+            {
+                "post_placement_company": "Dr. B. Lal Clinical Laboratory",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHUcPPllyOCYA/company-logo_400_400/0/1581417360605?e=1678924800&v=beta&t=LwP9-_38I4PeaOWFCW-nmF1S8lydBkR9FczWcUWw-zc"
+            },
+            {
+                "post_placement_company": "Persistent Systems",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQGctyhyN9TCDQ/company-logo_400_400/0/1643009065294?e=1678924800&v=beta&t=RENtSPlWMsXXp8w6kg16RRGumNWKPydkG5Rllcl_hno"
+            },
+            {
+                "post_placement_company": "TCS",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQFPP1NRP4F5dQ/company-logo_400_400/0/1656657976685?e=1678924800&v=beta&t=84Igs575QdH-_xpx3qn57FZfKBP22xgMTquUtfReaFg"
+            },
+            {
+                "post_placement_company": "EY India",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQGpRhkpxp5A9A/company-logo_400_400/0/1561962168715?e=1678924800&v=beta&t=KSAv0ymUsVWU0au_9HR7rGrFjpYlUq5ryv3nzygg9Os"
+            },
+            {
+                "post_placement_company": "TIBCO",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHeguuD7Vsb-g/company-logo_400_400/0/1669219407826?e=1678924800&v=beta&t=Bn2yOiWxzUi1jK1RfXRzj0D7lN3ceQ8yNkjm4PgOSI4"
+            },
+            {
+                "post_placement_company": "ITC Infotech",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHChIp3T3c83w/company-logo_400_400/0/1519855878132?e=1678924800&v=beta&t=12JlbgdmRmK52Gi7E7Fmf9Rdtl5KW5NomjKWRUOnToo"
+            },
+            {
+                "post_placement_company": "Dell",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHd5Km8_W6GVA/company-logo_400_400/0/1614178926580?e=1678924800&v=beta&t=OTbPkT5vcVwc2Gqyr_HV3KBB-ZZgx-QKdHBClbvqUwE"
+            },
+            {
+                "post_placement_company": "Envestnet | Yodlee",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHN1PATEWr6Fw/company-logo_400_400/0/1656680071819?e=1678924800&v=beta&t=zjEU39IMxuZ83d4hFtF5mMlyzvDBnsQxbjohuK0nMfs"
+            },
+            {
+                "post_placement_company": "Shell",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQGN30g7aSl4NA/company-logo_400_400/0/1519856218579?e=1678924800&v=beta&t=JCo2tz_-6aQpwHseSOW64J3zMlwW-XE99mTHW4a0aMU"
+            },
+            {
+                "post_placement_company": "GlobalData Plc",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQG3cXREO4vwUw/company-logo_400_400/0/1645714718850?e=1678924800&v=beta&t=FfgVx2PJI0Boh6eJTRaQGAmFWCFWjAfscJGcvQkOhbI"
+            },
+            {
+                "post_placement_company": "NatWest Group",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQEA8k9x0NLXVw/company-logo_400_400/0/1658409006908?e=1678924800&v=beta&t=AUdvxq0ZAqtMuYLUc0Yss4OKTh7om7g8aY9sNAAkpKE"
+            },
+            {
+                "post_placement_company": "Netscribes",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQEDretukuQ8UA/company-logo_400_400/0/1625602547620?e=1678924800&v=beta&t=QG8_rV_C9gEcU3DWmHKbuWhg69MmtAT-X8GkmkN3L90"
+            },
+            {
+                "post_placement_company": "Kantar",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQFU2Ko5NTxlmg/company-logo_400_400/0/1656602971486?e=1678924800&v=beta&t=rJTdxpYrklwWCc2teK8c0gBjEIPjhh3zPU80GhrBV4M"
+            },
+            {
+                "post_placement_company": "Mercedes-Benz Research and Development India",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFwOM2CTIiZvw/company-logo_400_400/0/1628598235735?e=1677110400&v=beta&t=UveLRa-PSkcC5pCBexQJ_mUJt8ND11ysnf6unfUvS94"
+            },
+            {
+                "post_placement_company": "LTI - Larsen & Toubro Infotech",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D4D0BAQGsPjF4QmtIYQ/company-logo_400_400/0/1667281246514?e=1678924800&v=beta&t=TsF_WQz4OPItjzUmxxmDTHeQus_Tv6jE4GoOfFzhDGs"
+            },
+            {
+                "post_placement_company": "CSC",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQECbCvL393IOw/company-logo_400_400/0/1575301102986?e=1678924800&v=beta&t=hBlKGZPTKgyAtbbJYn8ifI4g-6GPz7Tz39n1uQb3LJ0"
+            },
+            {
+                "post_placement_company": "ABB",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHPGAMgqJMBZQ/company-logo_400_400/0/1602668648845?e=1677110400&v=beta&t=i2Vw50ZiovvSvz7TtTH4M9R_3g762CzHDEN3QWvDVYQ"
+            },
+            {
+                "post_placement_company": "Visa",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQEP8_eM4zW8bw/company-logo_400_400/0/1626865473807?e=1678924800&v=beta&t=XAww1cHDa8XVGjXlPI45ys1r27c33fHKrUoDQO9l12w"
+            },
+            {
+                "post_placement_company": "Foodhub",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D560BAQGyQj16XeQrWA/company-logo_400_400/0/1663757595563?e=1678924800&v=beta&t=NczRozY3S7GHdgsRWufK6iIAP40RLxdns1V3IWMgFow"
+            },
+            {
+                "post_placement_company": "Samunnati",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFsI-OcDGGdKw/company-logo_400_400/0/1627291218695?e=1678924800&v=beta&t=VhFMcvOkh2mvpb_D0sE5QVOYa44SdYKqX62rNbSLYr4"
+            },
+            {
+                "post_placement_company": "KPMG India",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D4D0BAQG0vVwMD2DIYQ/company-logo_400_400/0/1666099304970?e=1678924800&v=beta&t=906Qujw4qzi6rYeEWOh5xoKhiA81G_d5wVtJpqL6PVg"
+            },
+            {
+                "post_placement_company": "Avalara",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQESWKy4lzl4qg/company-logo_400_400/0/1656685915209?e=1678924800&v=beta&t=0L0lSY_2ttd8d-JrNM2O1mfFrOnFgcq9zoH0QBJ7Djk"
+            },
+            {
+                "post_placement_company": "DELL",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHd5Km8_W6GVA/company-logo_400_400/0/1614178926580?e=1678924800&v=beta&t=OTbPkT5vcVwc2Gqyr_HV3KBB-ZZgx-QKdHBClbvqUwE"
+            },
+            {
+                "post_placement_company": "TIAA",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQElHw0Ma1OTdA/company-logo_400_400/0/1656625584840?e=1678924800&v=beta&t=AIQoMYWaBb8WbhRYIzDGpb5Rz3snsBajuPjTrxz91sU"
+            },
+            {
+                "post_placement_company": "RBC",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D560BAQF8cuZ9i2IRQQ/company-logo_400_400/0/1665067276504?e=1678924800&v=beta&t=2_qIFO8HcgWOjG6-Fc8t9I6ZUu-babh6hqRBlTU8mLM"
+            },
+            {
+                "post_placement_company": "Walmart",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQE4Th_qgWovfg/company-logo_400_400/0/1655487552279?e=1678924800&v=beta&t=U4ISZZzp43MLR0zTTiBqpdwlEZ2K2z2qhvVwHzvDev8"
+            },
+            {
+                "post_placement_company": "GE Healthcare",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQFfb0sGGhzPgQ/company-logo_400_400/0/1658572492333?e=1678924800&v=beta&t=zdgdAZT9crrTTT59TZHMVouARMUPGrcnboNWte0Q24E"
+            },
+            {
+                "post_placement_company": "Caterpillar Inc.",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D560BAQG5bofxzT4nIw/company-logo_400_400/0/1666113238369?e=1678924800&v=beta&t=ORRJ1l36LVtUk1_OMrTrrwwPx6L-qT5sKHy3X9ggC68"
+            },
+            {
+                "post_placement_company": "McDonald's",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHWxquJ9PJxvw/company-logo_400_400/0/1552140114610?e=1677110400&v=beta&t=OIZosC62mNhyLdHKvt7PI1vxx7VOx2wtsYWBGteYW90"
+            },
+            {
+                "post_placement_company": "Varion advisors analytics",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQGbxYD60V53XQ/company-logo_400_400/0/1654165725230?e=1678924800&v=beta&t=U9DpZwm-x1Bz3wPA4atBlfyjOYaVI2jMjQaiQFgB7BA"
+            },
+            {
+                "post_placement_company": "Apple",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHdAaarsO-eyA/company-logo_400_400/0/1595530301220?e=1678924800&v=beta&t=rh_MH28K12thhJ78dARFo997tzXesbjP3dQ_cStgXaw"
+            },
+            {
+                "post_placement_company": "CoreLogic",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQECu4-51APf4Q/company-logo_400_400/0/1668175591428?e=1678924800&v=beta&t=_YgE7VpCDwLVuX2ARGuGZiqWdv8IZ0sLbCzDvMKWFOs"
+            },
+            {
+                "post_placement_company": "Embibe",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHsCBvh5SI2Jw/company-logo_400_400/0/1635952496537?e=1678924800&v=beta&t=f_-OwLM_TjGaIIedSICuJmAvlPp74z54KKAjvGBkhkg"
+            },
+            {
+                "post_placement_company": "Adani Enterprises Limited",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHWfWqyjHfUdw/company-logo_400_400/0/1627997105708?e=1678924800&v=beta&t=iDNPE_VN8hpzax4mGyvsgMBecm_dkbsiujIEjZp-4qE"
+            },
+            {
+                "post_placement_company": "McKinsey & Company",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHP1XsqU9L_XQ/company-logo_400_400/0/1656621713859?e=1678924800&v=beta&t=0MeA6DR3TDyQyk6-TaPk4OKhRR0Oimi7W8JVRIAbRPg"
+            },
+            {
+                "post_placement_company": "Black & Veatch",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFdS9krGlW80A/company-logo_400_400/0/1643909465992?e=1678924800&v=beta&t=tzFqW7CFTcmM2hp2lhMpBLp3prCewNlZYUcGyDrvG6Y"
+            },
+            {
+                "post_placement_company": "Daimler India Commercial Vehicles",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFUQbKnXEvgnA/company-logo_400_400/0/1662717218142?e=1678924800&v=beta&t=p4UIIvRaml6zU13PYAKPjwrj3U93Cl9MZlU37-bCTOc"
+            },
+            {
+                "post_placement_company": "Cisco",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D560BAQGRHOdaPHPKEQ/company-logo_400_400/0/1665765655002?e=1678924800&v=beta&t=ciMo63n1gePdiurTzxWwH4GAPPhDgu3rP3iNtQ9yHvU"
+            },
+            {
+                "post_placement_company": "UnitedHealth Group",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHFsVkm-0t4fA/company-logo_400_400/0/1643414338931?e=1678924800&v=beta&t=LDmfDugTOC-iD_qQ3CotdU500GEV379DzALeFSswn4M"
+            },
+            {
+                "post_placement_company": "Reliance Nippon Life Insurance",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQGMszLFhaX0ZQ/company-logo_400_400/0/1656051504924?e=1678924800&v=beta&t=phzxHdcO-HDFjRPNies81t-iBJga3Uo6hh6jzMAUf2k"
+            },
+            {
+                "post_placement_company": "Kotak Mahindra Bank",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQF-GW7Nv4Reuw/company-logo_400_400/0/1553583082452?e=1678924800&v=beta&t=dUrVsfKi88qDOwZ92ODpqcPwkTvu9nDjcSRY4oYFu1E"
+            },
+            {
+                "post_placement_company": "Bajaj Finserv",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQGwUIzs_wq_DA/company-logo_400_400/0/1519915281767?e=1678924800&v=beta&t=utM-unhA4BRUNxl7AT7gCWOzrs9gVtds-jDzVAemLao"
+            },
+            {
+                "post_placement_company": "Royal Enfield",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQGsTYGDRG8UKA/company-logo_400_400/0/1519865158316?e=1678924800&v=beta&t=CYN1FKSvcMRViE6UKhKGE8dGqPwqtx4BVrood8aRTeM"
+            },
+            {
+                "post_placement_company": "Honeywell",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFvcIh3UnA5zw/company-logo_400_400/0/1535662846602?e=1678924800&v=beta&t=w3QBdkglBUiL5YN1UauDUw9cPsjAw398AjhyvSKrb9I"
+            },
+            {
+                "post_placement_company": "Maruti Suzuki India Limited",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQGde6X8QN2f_w/company-logo_400_400/0/1667968132493?e=1678924800&v=beta&t=cUwXt0KeD7phGgeTR_du24Wojp8FBzlIUaXOdpJMwwg"
+            },
+            {
+                "post_placement_company": "Paytm",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D4D0BAQEON9nU-K3L6w/company-logo_400_400/0/1665731624733?e=1678924800&v=beta&t=v5Xo-8BdykunPXNHTaMLY-H_QhIFR7uNZqDKszm5gb0"
+            },
+            {
+                "post_placement_company": "Citi India",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQGOIHKMGTToJQ/company-logo_400_400/0/1660726687096?e=1678924800&v=beta&t=pj7TLR5v6UW4NunUqHK2DY0BCATHs_c369nQ8RA3mOU"
+            },
+            {
+                "post_placement_company": "AMD",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQEkjpiqeCK9Ag/company-logo_400_400/0/1654804893875?e=1678924800&v=beta&t=kqc4FMX607hMYYhiAxqdkUTFZ29bn1bs9QU3cEaLQP8"
+            },
+            {
+                "post_placement_company": "ExxonMobil",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQE_IRWZ2qVHpw/company-logo_400_400/0/1519856502690?e=1678924800&v=beta&t=f8QV0hBl506Ds_MD9kXkFqfjWrdJPz3JzBzWpAkuLlM"
+            },
+            {
+                "post_placement_company": "Capital One",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQF0OgQyRZ9yAA/company-logo_400_400/0/1635782717682?e=1678924800&v=beta&t=mSZAseSMe2cqNA8ZQw38IaU-avu26MtgLSlEIeRrqSk"
+            },
+            {
+                "post_placement_company": "Vmware",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGRwuYZeI6aaA/company-logo_400_400/0/1588094413060?e=1678924800&v=beta&t=_gwW5g6kXGLI4CySUx8Tu08iz6B4ujtxn0vzW17vZqU"
+            },
+            {
+                "post_placement_company": "Aeris Communications",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQGdbD4l6jPYvQ/company-logo_400_400/0/1519856558072?e=1678924800&v=beta&t=uATdRijf6yb_qkaNgVPrfZN45Z252WzsM4eRC7x-LYM"
+            },
+            {
+                "post_placement_company": "American Express",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQGRhsociEn4gQ/company-logo_400_400/0/1523269243842?e=1678924800&v=beta&t=PY2T93rtpq7r8koqdmhotPlJK2A7LXwJIxlRVgvK994"
+            },
+            {
+                "post_placement_company": "SYSTRA",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQH0_q-5z8qs-g/company-logo_400_400/0/1519855891085?e=1678924800&v=beta&t=sEP_McleYz5h89iLnkQSTG5x34xoJ0mxQS8S0QRsnS0"
+            },
+            {
+                "post_placement_company": "BT",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D4E0BAQFcyvjY35EvXA/company-logo_400_400/0/1663653522749?e=1678924800&v=beta&t=ZXqvtxN5DL_En11PxEd4YPBWsN43nUH6npkyIlH4jko"
+            },
+            {
+                "post_placement_company": "Accenture in India",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHu-o4jvxOflw/company-logo_400_400/0/1654059736253?e=1678924800&v=beta&t=D_tMJYlLseEFUHNkAfmqYjYDV9KKLa7n-m_v1qSjzgA"
+            },
+            {
+                "post_placement_company": "ADP",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQECpaUY68_v0w/company-logo_400_400/0/1656691478514?e=1678924800&v=beta&t=92Hv4SIHf15CxUgiPSHHEcJ1jmEonbkcYB-gTJmtCs8"
+            },
+            {
+                "post_placement_company": "Fidelity Investments",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQEp8IZ2oEGxKA/company-logo_400_400/0/1593624241969?e=1678924800&v=beta&t=P4q7K1qp-RSKZnTCNAkH3Dr-ffJQ6yMmST44_rp-3Vs"
+            },
+            {
+                "post_placement_company": "CGI",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQErzXWSFkn9tQ/company-logo_400_400/0/1663664110409?e=1678924800&v=beta&t=MHftRGP9Vuy3AWAxXvZCzkzMurYFZzTUbTDN1guEGBM"
+            },
+            {
+                "post_placement_company": "Frost & Sullivan",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQEf_M90tQUafg/company-logo_400_400/0/1669920398094?e=1678924800&v=beta&t=PNxDpOENaXvRylztg48OzKJms4qc9ZuZwZYgalB4oL8"
+            },
+            {
+                "post_placement_company": "WNS Global Services",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQEFCDQta2K9yA/company-logo_400_400/0/1591202030019?e=1678924800&v=beta&t=CsjT1JfP24ZNqfpEn3Z2rGe8wLbyopJIQc-6ZtVBGc0"
+            },
+            {
+                "post_placement_company": "Incedo Inc.",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQEzqnAdsML8AQ/company-logo_400_400/0/1656661705726?e=1678924800&v=beta&t=vijfqkuq9pA2NzWy9lTo3Q1juZTRjQJjECTDtNzZ2y4"
+            },
+            {
+                "post_placement_company": "T-Systems ICT India Pvt. Ltd.",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQEwCA2igBbbPQ/company-logo_400_400/0/1658316418427?e=1678924800&v=beta&t=1a60ADxWmeaTdJO3vwDHm_lp-mFEKUYMShycY9u2Y2M"
+            },
+            {
+                "post_placement_company": "BRIDGEi2i Analytics Solutions",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFC_D-7NBO8ZA/company-logo_400_400/0/1637570756634?e=1676505600&v=beta&t=hRXtNJpJQGj7jTjaqm14R5__Uu4MXaqay1GBGoUsvV8"
+            },
+            {
+                "post_placement_company": "I-PAC (Indian Political Action Committee)",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQGQ618uFEqYGw/company-logo_400_400/0/1635247451358?e=1678924800&v=beta&t=zLiObnSHpUgXdLkNmi1CSkMDNfdBxgv08CRRA8NBlXI"
+            },
+            {
+                "post_placement_company": "Bosch Engineering and Business Solutions",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQGn4ZR6w6geGA/company-logo_400_400/0/1656790100428?e=1678924800&v=beta&t=uToF2mIWwREdGfgfMWU2PusZOy51eCJHtkeRxYVv_TQ"
+            },
+            {
+                "post_placement_company": "Mphasis",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQGA6s2gCDu-MA/company-logo_400_400/0/1599218718211?e=1678924800&v=beta&t=zNMk3qDtvNoWWGO_9gpAznn95Y2zL8PODVxKMMDws7Y"
+            },
+            {
+                "post_placement_company": "Sonata Software",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHHd1lirm-LdQ/company-logo_400_400/0/1542875109761?e=1678924800&v=beta&t=oORjwe6vNS88ZgiFzh1QJDpiFpdMRToA6AXSmpzhMWU"
+            },
+            {
+                "post_placement_company": "Tesco Bengaluru",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGkX64sK-8adg/company-logo_400_400/0/1663052264893?e=1676505600&v=beta&t=NZG-DtpuaOWvB2r_IMwUCDYDjGJS7uoMv7gPXSFRZn4"
+            },
+            {
+                "post_placement_company": "Anheuser-Busch InBev",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQEZRSga0FreWA/company-logo_400_400/0/1656631574060?e=1678924800&v=beta&t=JzWkDwy8m_IKmU7InNj6xpdjreGfLru4xrBRm9RVUTU"
+            },
+            {
+                "post_placement_company": "Reliance Industries Limited",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGL2p38Nc6Qkg/company-logo_400_400/0/1661518369816?e=1678924800&v=beta&t=qZRb9YUTDKdp9na2M-SvFQXmQaB0Y-q2pDUE7MY6DWo"
+            },
+            {
+                "post_placement_company": "World Bank Group",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQFL0D8N-Q7vaQ/company-logo_400_400/0/1519911517815?e=1678924800&v=beta&t=pCZbqpvT7liHtykoo-HtUUPNJmdUiDaLzVz90eDg8Bg"
+            },
+            {
+                "post_placement_company": "6sense",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFXHtF0wQmYow/company-logo_400_400/0/1657288837063?e=1678924800&v=beta&t=AGSeUBi7me09Qgrh4eoE2ek9QcWNfTzW79OmRjPCjYM"
+            },
+            {
+                "post_placement_company": "SkyHive",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFnW9yiArLW6w/company-logo_400_400/0/1633119456580?e=1678924800&v=beta&t=JWcXU6CS72CRyDSEcQfxZuMH0qr5VmiLF6c_RAW2aXs"
+            },
+            {
+                "post_placement_company": "Whirldata Inc",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHf7Zis4WN0ow/company-logo_400_400/0/1521704986338?e=1678924800&v=beta&t=0po2rF-akE4Ys174tllSOn3TPdrf7jTOfk0mc5C7B6A"
+            },
+            {
+                "post_placement_company": "Legato Health Technologies",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQGTMd-sEQjIMg/company-logo_400_400/0/1657105122430?e=1678924800&v=beta&t=ryhxVaPsDSibw5UMfRPvcXe4z7gMU3qRy67FRpwTJ24"
+            },
+            {
+                "post_placement_company": "TD",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGAdNSAqeT_wQ/company-logo_400_400/0/1598638232221?e=1678924800&v=beta&t=5-uFOTcQ9eqiSlFKRg7_l-liEt46UxekE9ddLCNZ01A"
+            },
+            {
+                "post_placement_company": "CALYX",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFSi3g7Xvl5gg/company-logo_400_400/0/1610297225528?e=1678924800&v=beta&t=kRivXzZIlzRqd-jt_AuvkDSbzgppD67zs03lnVotx6Y"
+            },
+            {
+                "post_placement_company": "HARMAN International",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQELL7UV7jjjpw/company-logo_400_400/0/1656789044657?e=1677110400&v=beta&t=K6Jm5kspDinNWWbZNvRAumjPuk8bFJggeMILpo-7ZgA"
+            },
+            {
+                "post_placement_company": "GE Power",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQGkrFXAvgJRTA/company-logo_400_400/0/1658165842992?e=1678924800&v=beta&t=SO89Hy55tHVUf-TZ0JDnpyohmzghoCyPjwgS-6gbMr0"
+            },
+            {
+                "post_placement_company": "Emerson Automation Solutions",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHucve286fmsA/company-logo_400_400/0/1656660599239?e=1678924800&v=beta&t=GNXMp3s8xxFz-NZeFPjV6BFYZUjMTkhpR247-JGWLpA"
+            },
+            {
+                "post_placement_company": "Afterpay",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQEa5I9rfFfNfg/company-logo_400_400/0/1625636420922?e=1678924800&v=beta&t=UhMtxcYfckNTxU_aedXyWxwQutIH7WdYT009RpKx5pU"
+            },
+            {
+                "post_placement_company": "Bell",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQEOyCiCnSmPXQ/company-logo_400_400/0/1656950292878?e=1678924800&v=beta&t=xKlbTklDTsFKsHYELi3RGX9EhB8n6boq-YKO0TMkvfU"
+            },
+            {
+                "post_placement_company": "Datamatics",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHAvlzUsYGfxQ/company-logo_400_400/0/1597732587530?e=1676505600&v=beta&t=c8Z6SQDH8LfesASpq4IVaR2Z_stIpPoUeW62WMkmGpw"
+            },
+            {
+                "post_placement_company": "Thomson Reuters",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFv3WODZf1ULQ/company-logo_400_400/0/1656655511771?e=1678924800&v=beta&t=WSo5RclEg51GDnn51ToqJF9Oo2Cr1gVzZhpRPO-U9Ec"
+            },
+            {
+                "post_placement_company": "Vonage",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQEhxNHffNmaJQ/company-logo_400_400/0/1656685553594?e=1677110400&v=beta&t=muD8MCF0j2EKk9SoTkPj1eGyMprnUsWBkHo-6z49tGM"
+            },
+            {
+                "post_placement_company": "The University of Texas at Austin",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQEREeDg1PACXA/company-logo_400_400/0/1617385772288?e=1678924800&v=beta&t=Xtiez6uXKuNZkZRUriJk82MiJCnclmYejgdW4rzqB3M"
+            },
+            {
+                "post_placement_company": "GAIL (India) Limited",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFOdUnW6wxovg/company-logo_400_400/0/1660814009597?e=1678924800&v=beta&t=r3rIvqZr7-PHmmQXQnp_yFOOP_0H3F_nX66IiDD1m2o"
+            },
+            {
+                "post_placement_company": "Morningstar",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHPAqYNGQxNsA/company-logo_400_400/0/1657135389226?e=1678924800&v=beta&t=OfwIpsSmYE5cyrYZv9cH6BXyuJhmMjUKTsnZ4_1sa84"
+            },
+            {
+                "post_placement_company": "Genpact Headstrong Capital Markets",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFj23wnTEuWzA/company-logo_400_400/0/1519855857946?e=1678924800&v=beta&t=YdDQWKf2LkmvTRSirMbPTBVTn87Kajq59teQfh_aldg"
+            },
+            {
+                "post_placement_company": "McorpCX",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQGmyXwoDqfZEg/company-logo_400_400/0/1519912889379?e=1678924800&v=beta&t=Y0VCHE4uLWAJYGsDK1_GQV_pNHvTVZXwwRLrO2IsLOY"
+            },
+            {
+                "post_placement_company": "BNY Mellon",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQHyTxThMWISYw/company-logo_400_400/0/1519886995638?e=1677110400&v=beta&t=dNyuo0wprFML5jMjksO9AjcyCeboYhF0mg1lWcZqwPo"
+            },
+            {
+                "post_placement_company": "Wipro Technologies",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQEOkjRmtlk0Ow/company-logo_400_400/0/1667935599324?e=1678924800&v=beta&t=hk5u6oAUhmir32_1ddVsXKVLVl6yXWB5t8C1tndOr-0"
+            },
+            {
+                "post_placement_company": "US Army",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHs7WhQTJ7GTQ/company-logo_400_400/0/1519856313202?e=1678924800&v=beta&t=QvEnL0VPSzja02Hl_FyRevly7kjhKhzHVz-ybCTAmpc"
+            },
+            {
+                "post_placement_company": "Tekion Corp",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGB0W6_ixPclA/company-logo_400_400/0/1547049504116?e=1678924800&v=beta&t=7imBv6AJ8lisuiT3Deoxte2KjwOtEEKPexHjgHbZEAw"
+            },
+            {
+                "post_placement_company": "WESCO Distribution",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHHMCHxugx0OA/company-logo_400_400/0/1654640283999?e=1678924800&v=beta&t=yY9ixtw0I2XQTftpVjw62FMeQtcGORQe-lAkxaunD80"
+            },
+            {
+                "post_placement_company": "LetsGrowMore",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQH3Wp-0LMBbcw/company-logo_400_400/0/1641653605723?e=1678924800&v=beta&t=ClE4h4tHGMe0j8jXvoAjGoX0pYCi8KaqcJ6DoUdFRdw"
+            },
+            {
+                "post_placement_company": "Siemens",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQH8OycY4UspgQ/company-logo_400_400/0/1656603399847?e=1677110400&v=beta&t=CMzBgcG8NXKX2c0i0s5QCE7tAD5fL8iNs3UbjuBxKgI"
+            },
+            {
+                "post_placement_company": "Atos Syntel",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQG5P3OQsUfhcQ/company-logo_400_400/0/1539100275160?e=1678924800&v=beta&t=PUGd4h_hYBFbeCStnm4jz9UN5nkwUgH2paypYp80RW4"
+            },
+            {
+                "post_placement_company": "FLSmidth",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQG44HFQblqIMg/company-logo_400_400/0/1661770769041?e=1678924800&v=beta&t=px_Ie7AHKGW8AllNOeT4EmSwdAglmdCroIPeL9wfIys"
+            },
+            {
+                "post_placement_company": "Healthkart",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFg15w4SLp4NA/company-logo_400_400/0/1646373770785?e=1678924800&v=beta&t=-ZVprBDJHY9JNicDc9KIqwwYZclqO2JbZR_t-Ea8u0c"
+            },
+            {
+                "post_placement_company": "Macquarie Group",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQFWxaMqRxHNZQ/company-logo_400_400/0/1618184856997?e=1677110400&v=beta&t=DXqahWuzG2ZZfGkzWOejIrm0R4KZV2BjLAQ9m5XJlbc"
+            },
+            {
+                "post_placement_company": "ICICI Lombard",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQEs_8b2hhS8MA/company-logo_400_400/0/1661306330218?e=1678924800&v=beta&t=3cdEjxIxan1__IlesWuXmV54FOJuP4VXIyy26uF3d5U"
+            },
+            {
+                "post_placement_company": "Magnolia Oil & Gas",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQG53871wTTIQw/company-logo_400_400/0/1564583660553?e=1678924800&v=beta&t=Z65aFPTU8r841JpaX8cdD5QusEkNsIM-OKrFEmUaGRg"
+            },
+            {
+                "post_placement_company": "Baker Hughes",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQE4CJSgGjKt_w/company-logo_400_400/0/1615928699683?e=1678924800&v=beta&t=wW7zpZTUKZ-gU-6Dk9MpCvOfNbMERqDcC1MG0SBVD6M"
+            },
+            {
+                "post_placement_company": "Siemens Healthineers",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQE5hmEcQGYmLg/company-logo_400_400/0/1635709401727?e=1678924800&v=beta&t=z5vNx_fNWIEUZZXVVDEe9x5b8mcjvXL4_65X7QqFe2Q"
+            },
+            {
+                "post_placement_company": "Times Internet",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQEnXC6kNky8EA/company-logo_400_400/0/1617265304984?e=1678924800&v=beta&t=lrEiAMBIIVNsGsem6dp8QSpQcv05i1jDlffYyLPbruk"
+            },
+            {
+                "post_placement_company": "Mahindra Group",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D4D0BAQGQCdkOp2uW-g/company-logo_400_400/0/1664681375628?e=1678924800&v=beta&t=RPmrUtdcQELbMiYIXL0pC3moT2aln64CuobG9VCNB3w"
+            },
+            {
+                "post_placement_company": "Dell EMC",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQErubCcqX1TpQ/company-logo_400_400/0/1557939499088?e=1677110400&v=beta&t=samKKgNcMG85PVcT3Y--GvkUruBJ0K5V2lGNPphhMwM"
+            },
+            {
+                "post_placement_company": "Unisys",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQGP5PO--smhpQ/company-logo_400_400/0/1669644012248?e=1678924800&v=beta&t=YdLopmYIHwtlRsRt7BsgJ80zuIlbhSegBjhmtBSiDWQ"
+            },
+            {
+                "post_placement_company": "Changepond Technologies",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQH8XnotnxXkAw/company-logo_400_400/0/1586345669880?e=1678924800&v=beta&t=vQsSfuw0rKQOyhP5D02XhBf4G_AqVf0d4y6y4Ihpfas"
+            },
+            {
+                "post_placement_company": "HT Media Ltd",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQE_pDDKHpo6Bg/company-logo_400_400/0/1519856274123?e=1678924800&v=beta&t=Hgnt_1p5toVh_Houflh6I8P-p1Dqm0ZZCATrhkQn6es"
+            },
+            {
+                "post_placement_company": "Oyo Rooms",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQFN7VKJv1AmEA/company-logo_400_400/0/1655457191555?e=1678924800&v=beta&t=i9hkgPY-nM_ePzl11DNxoCSnMNPM-OqgsjNvxRiQgEs"
+            },
+            {
+                "post_placement_company": "Version 1",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQFmxn19iFa-2g/company-logo_400_400/0/1669803735728?e=1678924800&v=beta&t=CsObbLKecB9fv5IkOl-9zCp8WhATDfPnrfFqBA3r0zE"
+            },
+            {
+                "post_placement_company": "WayCool Foods & Products Pvt Ltd",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQH9r0B_D61wpg/company-logo_400_400/0/1663664808617?e=1678924800&v=beta&t=zeH-40MQpQZbZk6lCy899xDubtzu0eKRvAwGNZf-icA"
+            },
+            {
+                "post_placement_company": "Citibank",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQF1Y797wT1sRg/company-logo_400_400/0/1656644024034?e=1678924800&v=beta&t=HQFij1g1CApOB3beSExD1NP9FHP7Uq4uCKaMuX4HpoM"
+            },
+            {
+                "post_placement_company": "Starcom",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQH2qeAveUyl8g/company-logo_400_400/0/1625157196135?e=1678924800&v=beta&t=vxQfMU2s1S475A1zbMQydKSbLSLRWp2-opuUkVJtMGY"
+            },
+            {
+                "post_placement_company": "ValueMomentum",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQEaI8e4iEmPEw/company-logo_400_400/0/1604597172221?e=1677110400&v=beta&t=8dbr3r6loq1h6lwXG7foW-fkVV-0QXLom-0avG1-9vY"
+            },
+            {
+                "post_placement_company": "Moss | All-in-one spend management",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGgVV1WoQ1bWA/company-logo_400_400/0/1625133035947?e=1678924800&v=beta&t=26ptLacIlUasalz2DdkQ2oJOhUwippgfZVzHdq8qz38"
+            },
+            {
+                "post_placement_company": "Park+",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQEHAGELNWmeAQ/company-logo_400_400/0/1584182109686?e=1678924800&v=beta&t=sZEnUZvp5doxKQ1WJCZsuSp9AA_VmoSJO4moS2aOBZY"
+            },
+            {
+                "post_placement_company": "Hubject",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQEOkhOoxviutQ/company-logo_400_400/0/1589444488731?e=1678924800&v=beta&t=dpiTKFzUDHKuUopLTKecQM-XuHwbls3H6J32y9_EsFM"
+            },
+            {
+                "post_placement_company": "Tata Technologies",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQFwGHH9jEchVQ/company-logo_400_400/0/1669007325941?e=1678924800&v=beta&t=ZaDERI4dMlAvh1Gyxn9GNLUQMr4vp13aSmhetSofWBo"
+            },
+            {
+                "post_placement_company": "echoVME",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGwG_wvmo6_BA/company-logo_400_400/0/1519896370782?e=1678924800&v=beta&t=UPhdrpvC7EFSpYZYY7sQpbVDlWYQaVfPu2KEBLSg790"
+            },
+            {
+                "post_placement_company": "Tata Steel",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQEdQIE0htk3-Q/company-logo_400_400/0/1654756160550?e=1678924800&v=beta&t=hts5OiwTAAgvPZR1RgTzCoaKzZqtaPSOooy6yFhXppY"
+            },
+            {
+                "post_placement_company": "adidas",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQFCxaP0Pp0p0A/company-logo_400_400/0/1657265312318?e=1678924800&v=beta&t=rOfuxNMnvDnIQyI4N8rwvvHLH3kV-11pdbkewvsy7nw"
+            },
+            {
+                "post_placement_company": "Schlumberger",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D560BAQFwhnoORL25KA/company-logo_400_400/0/1666604495973?e=1677110400&v=beta&t=NA1zdwDVSYiHYW_P5eIUyfoLwrhPBXd_4oyuXQzsWGc"
+            },
+            {
+                "post_placement_company": "Target",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQGUjozudTh0yg/company-logo_400_400/0/1519856213195?e=1678924800&v=beta&t=cYi0QQNKhqOSe6J225uRxc7ol1HZX89e3LQUc4Huz9M"
+            },
+            {
+                "post_placement_company": "Bank of the West",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQE_EfCMqv20Iw/company-logo_400_400/0/1625595826701?e=1678924800&v=beta&t=z6Aq7MmCVyzeTfXW-syY9muDTDpeCOKgeotBKgyEWQg"
+            },
+            {
+                "post_placement_company": "PrimeHRD",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D4D0BAQFyn_WI_xO2JA/company-logo_400_400/0/1666252054181?e=1678924800&v=beta&t=s8O09Zd1ut5rSR08FthKx7BHevfDXtt2LnSdDhdRRPc"
+            },
+            {
+                "post_placement_company": "Maersk Global Service Centres",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQFxaOJ8VzplhA/company-logo_400_400/0/1616162064676?e=1678924800&v=beta&t=JNWK_JJBZ5C8UG2z4pvBD6on2s2mV4Fd1C3wfXvIFX4"
+            },
+            {
+                "post_placement_company": "RGP",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGplXDokbKNPQ/company-logo_400_400/0/1657130831648?e=1678924800&v=beta&t=Xg9T52Imd4mJo-vx0HfIXrtHmlxqvi3kD8hyV9vIAdc"
+            },
+            {
+                "post_placement_company": "Medlife",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHJZckNQTraqg/company-logo_400_400/0/1592846718927?e=1678924800&v=beta&t=25WVyvbYmictOcuXk52Pd2VWxuNZi40mOjwcONAHOj0"
+            },
+            {
+                "post_placement_company": "Ramboll",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHqhOrYldQkNw/company-logo_400_400/0/1631891285155?e=1678924800&v=beta&t=iC1yQQUQcBqpS8LR3cDh9rb18EwKgvyKGt_tqZzCPKo"
+            },
+            {
+                "post_placement_company": "Bosch Global Software Technologies",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQGn4ZR6w6geGA/company-logo_400_400/0/1656790100428?e=1678924800&v=beta&t=uToF2mIWwREdGfgfMWU2PusZOy51eCJHtkeRxYVv_TQ"
+            },
+            {
+                "post_placement_company": "Saksoft",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQEiGYmzrZGHxw/company-logo_400_400/0/1622705048476?e=1678924800&v=beta&t=7lMr7JHJg5MGXoLAayhdjz8DZzSs6EsUqIYqp2_n5Rg"
+            },
+            {
+                "post_placement_company": "Massachusetts Institute of Technology",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHBK7qvTvtkZA/company-logo_400_400/0/1519856414204?e=1678924800&v=beta&t=yQYOOGlv8x2IO-lOEWQuLchyIfy8HMrDIVo6K6Ndlko"
+            },
+            {
+                "post_placement_company": "IIIT Hyderabad",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQFrspOhXYDkpA/company-logo_400_400/0/1519898799825?e=1678924800&v=beta&t=b0jbdB_KkujqCiXS4ZWjzwKEuOilSf6Klsg1W2CQnHE"
+            },
+            {
+                "post_placement_company": "GSK",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQE52m4AbEhxCw/company-logo_400_400/0/1663675238251?e=1678924800&v=beta&t=Nw3yY_ZW94t9H_q0y4BP_VNpV7BIR3MiT4xwheksMCw"
+            },
+            {
+                "post_placement_company": "CVS Health",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQEhOw_KVli-CQ/company-logo_400_400/0/1669901807416?e=1678924800&v=beta&t=9er10jjr7iuQttnkB_fpjfdZmEYmo0aiuCRrks3hSpU"
+            },
+            {
+                "post_placement_company": "IGT Solutions",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHYlb-q9P0vcA/company-logo_400_400/0/1659687111711?e=1678924800&v=beta&t=gEESpf7GaYb-s2DmVr5n7QuBU7RTI5HDH2H6DKacf8k"
+            },
+            {
+                "post_placement_company": "De Montfort University",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQGqoNYX_p7oPw/company-logo_400_400/0/1591869669794?e=1678924800&v=beta&t=xDL0NdBhbIfKtrazwCrnQqld8qJ8Q92FUmdAOhKuKuI"
+            },
+            {
+                "post_placement_company": "Infobip",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQFAn_KUYXccCw/company-logo_400_400/0/1652346392643?e=1678924800&v=beta&t=BrXJTgPvKKfP1bz5T1zEfWmJg7RT35Zh2hg8PsYpac4"
+            },
+            {
+                "post_placement_company": "J.P. Morgan",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQEVXhQs3mC56Q/company-logo_400_400/0/1630056226107?e=1678924800&v=beta&t=VA9rH_1pFPPnTOUCq3REuIdF2DTFrBSnQqRjFA7MvGA"
+            },
+            {
+                "post_placement_company": "Automation Anywhere",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQGAxUcvp9hvag/company-logo_400_400/0/1538431729807?e=1678924800&v=beta&t=Rtxyx-Wzuw7zJMj6bMUTetsNzCMKrtNenEkNGHuAAqc"
+            },
+            {
+                "post_placement_company": "Nuance Communications",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D4E0BAQHnprYpxN-MnQ/company-logo_400_400/0/1667311371564?e=1678924800&v=beta&t=5cJeh4oiCczh52RHLo4UZ5166e6xUaFDpltEKaczBtw"
+            },
+            {
+                "post_placement_company": "CaterPillar Inc.",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D560BAQG5bofxzT4nIw/company-logo_400_400/0/1666113238369?e=1678924800&v=beta&t=ORRJ1l36LVtUk1_OMrTrrwwPx6L-qT5sKHy3X9ggC68"
+            },
+            {
+                "post_placement_company": "FNB South Africa",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D4D0BAQGoIGSNNgX9Zw/company-logo_400_400/0/1665132464466?e=1678924800&v=beta&t=VbWxHzQAs-nTbXXQJYByrEDkng3hyLMReBmXDDSVOro"
+            },
+            {
+                "post_placement_company": "Square",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHikN6EXPd23Q/company-logo_400_400/0/1595359131127?e=1678924800&v=beta&t=-us5Gdk4s8PmreO3loqLIzFTpO19AgAjqOKuPP9IZhQ"
+            },
+            {
+                "post_placement_company": "Infinite Computer Solutions",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQFwB21S2RUJRg/company-logo_400_400/0/1593580723112?e=1678924800&v=beta&t=XQ09hAFkMnMS3e0Zn5YnZ94RzQx8RMq-ICCc51ojWiM"
+            },
+            {
+                "post_placement_company": "Grant Thornton LLP (US)",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQE_yp7IejDDrQ/company-logo_400_400/0/1657036197620?e=1678924800&v=beta&t=3avwfIB_MK13eoLD2yQuOi9EwcM7HQ2X_9JB2xJOkgg"
+            },
+            {
+                "post_placement_company": "Aditya Birla",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQEUbjMZ2EBV4g/company-logo_400_400/0/1519876178473?e=1678924800&v=beta&t=W3o5T4cLbVRjGhDQdRB81pbo05mjCgPSGkBcSn13D6k"
+            },
+            {
+                "post_placement_company": "Continental",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFYrK_MuDgrbg/company-logo_400_400/0/1519855980055?e=1678924800&v=beta&t=M1ME2NZLYwMoYoclDfpraoAsUW0X-P99X0qQluhkSfw"
+            },
+            {
+                "post_placement_company": "TVS Credit Services Ltd.",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQEd1o6oX9581w/company-logo_400_400/0/1562827200143?e=1678924800&v=beta&t=HCvrhqnRIvg_BYghaDhR1c282nFuxLuVzQdad55eDk4"
+            },
+            {
+                "post_placement_company": "Biocon",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQE3hlMoSlr1PQ/company-logo_400_400/0/1519922221395?e=1678924800&v=beta&t=N7MNe-wsLrNYvPJMy_o7tOy5DDS7HG9AX4R6lgFaIAM"
+            },
+            {
+                "post_placement_company": "ORACLE FINANCIAL SERVICES SOFTWARE LIMITED",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQH_VTLyTRO3-g/company-logo_400_400/0/1558581560483?e=1678924800&v=beta&t=PKsScZj1NtMvvtSRfUuJpBDl25bEPlIolBs1mYv16qQ"
+            },
+            {
+                "post_placement_company": "SpeEdLabs",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQEwlx7BEIb5hA/company-logo_400_400/0/1609929978082?e=1678924800&v=beta&t=_duIXIbF4zLpvqM16qv1K6VmTwtq9FI2iG7RJ8rlQ6c"
+            },
+            {
+                "post_placement_company": "Juniper Networks",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQFCi4JeKQHixw/company-logo_400_400/0/1519856214254?e=1678924800&v=beta&t=Vpep6cSV3iwRKHYZB9QpYrOefZIRTEEIShh6hZ4Nsuc"
+            },
+            {
+                "post_placement_company": "Robert Half",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D560BAQEMOFhifNHyAg/company-logo_400_400/0/1664281763734?e=1678924800&v=beta&t=I5mmLuv09KQsqHa7Uh7_Vh2629tgm2A9B4J9DEOJjU0"
+            },
+            {
+                "post_placement_company": "Equitas Small Finance Bank",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQGOEuTK0M6ngw/company-logo_400_400/0/1630822952223?e=1678924800&v=beta&t=X7nZ368jbO173gN-q36oZYHl3LhNRM3vT7ry46I8Mao"
+            },
+            {
+                "post_placement_company": "AdGlobal360",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D4D0BAQGMu2gJgvJ-PQ/company-logo_400_400/0/1666950885014?e=1678924800&v=beta&t=0WzJFjfP4Cd72TDFj4jdb8JPtpnA6jL0Zc_WnCAoZhk"
+            },
+            {
+                "post_placement_company": "Rogers Communications",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGGdhdV1vXOWQ/company-logo_400_400/0/1656697243751?e=1678924800&v=beta&t=eBRWkds1JM_Vo5faOTXPv_8kfUkNUD_3JK9TWLTn4TQ"
+            },
+            {
+                "post_placement_company": "CitiusTech",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQGSUi_CztrO1A/company-logo_400_400/0/1519945792016?e=1678924800&v=beta&t=Cdola3NyHF0r0hsvhVWyKeReE26d_ybkh2sOVCxwF30"
+            },
+            {
+                "post_placement_company": "Consolidated Analytics",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQFM9MyBKhV4AA/company-logo_400_400/0/1519918237777?e=1677110400&v=beta&t=FpCat4VRT5qbXCvHaehHdG3hh-fQVF4Os9qUIXjmxI4"
+            },
+            {
+                "post_placement_company": "Edifecs",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQFCm8F7Shlxqw/company-logo_400_400/0/1669922966562?e=1678924800&v=beta&t=jf5BoM191D1_jSo1__2irZjtXIGeSbsgBMtWfYF-Ze4"
+            },
+            {
+                "post_placement_company": "ShareChat",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGoeY9_j_6slg/company-logo_400_400/0/1589170207886?e=1678924800&v=beta&t=IlgTAJhFGU8YPmn1R3rUta7rqalSEwne7pN6Roq0leo"
+            },
+            {
+                "post_placement_company": "Tesla",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHUcu98SZ2TVw/company-logo_400_400/0/1607665771371?e=1678924800&v=beta&t=ioTOak3gonqrn1Vr0GexomYflRCFm4OeJQheTZE_EhQ"
+            },
+            {
+                "post_placement_company": "Renault-Nissan-Mitsubishi",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHdFvnQHMFn_Q/company-logo_400_400/0/1519900183265?e=1678924800&v=beta&t=Kpd2BwRJR0zM6c0OacfUQ5IkiULiG5tcYcybnSyfQ5g"
+            },
+            {
+                "post_placement_company": "Thermo Fisher Scientific",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFOdswSM-ByMg/company-logo_400_400/0/1657306338545?e=1678924800&v=beta&t=5yEHt6kHnYSntZ-HkLTtMYxP3h6iemvpDM2w9h7t7jo"
+            },
+            {
+                "post_placement_company": "CIBC",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFzsuOBMbdVng/company-logo_400_400/0/1656945055491?e=1678924800&v=beta&t=kKjGrxJOVLSZcSBr_xlAIUG-eFY0oOsSg9F0Wj1mjH8"
+            },
+            {
+                "post_placement_company": "Teradata",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQGrLEbqJZRT-w/company-logo_400_400/0/1538982145946?e=1678924800&v=beta&t=iZ-SA5kOLWYRbbnbqBwqVGkiFBgyQFEWMpgq05bebw0"
+            },
+            {
+                "post_placement_company": "Magna International",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQFhHcqd7I3JmA/company-logo_400_400/0/1669918126688?e=1678924800&v=beta&t=cCjcMPR-c5Ex-F_BMFoBKmjWv_rJveoWs_OK0lvTGMY"
+            },
+            {
+                "post_placement_company": "AGS Health",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D4E0BAQF5y57BmnHARA/company-logo_400_400/0/1663955300035?e=1678924800&v=beta&t=81mC-eiAD9h0ZP_fqalV1nvajTUg4benkAwp93MRkKA"
+            },
+            {
+                "post_placement_company": "Visier Inc.",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHbstMJzAnQcA/company-logo_400_400/0/1659661765059?e=1678924800&v=beta&t=d0mAtS9l0NVY5XyneXqCfCGBMSiWT6OKK3RC3cWRoGM"
+            },
+            {
+                "post_placement_company": "F5",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQGNf9LDytWnoA/company-logo_400_400/0/1519856507374?e=1678924800&v=beta&t=TXfGruDwUkNEunVjKUWJZRTEmh0rpgNSZi1LEC9PL_8"
+            },
+            {
+                "post_placement_company": "Synopsys Inc",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQEq7MVORIs3MA/company-logo_400_400/0/1519855929274?e=1678924800&v=beta&t=xbDD08E8OfGGzJFRcXXKZyy0U9amQXJx7O7qoZbpHwI"
+            },
+            {
+                "post_placement_company": "Episource LLC",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHFlkTQCcfQ9w/company-logo_400_400/0/1661786591298?e=1678924800&v=beta&t=_W-zxOfXV8EIofYXpuLxNTNlh_Zbf691Kq6W-YwTp10"
+            },
+            {
+                "post_placement_company": "Wissen Technology",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQHdxewi5Kl4eg/company-logo_400_400/0/1557147807188?e=1678924800&v=beta&t=qhhnanXzjMVLIXNVhkWAhEMLVm0lE8aUcaoIsRYDo7A"
+            },
+            {
+                "post_placement_company": "AllState",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGeCPin8jl-nA/company-logo_400_400/0/1600460945136?e=1678924800&v=beta&t=b1GmPMwgbqTY7AChs_b7mbHpdqG6eljJs8iyto2JydA"
+            },
+            {
+                "post_placement_company": "411 Locals",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHfHwkL_veMlQ/company-logo_400_400/0/1542186737301?e=1678924800&v=beta&t=gk7OoU9hc9y_seC0Grc1yjmKQVaPSIDlUAP8_oo3O5g"
+            },
+            {
+                "post_placement_company": "University of Hyderabad",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQEmPaNcnhQkLA/company-logo_400_400/0/1519909762328?e=1678924800&v=beta&t=WOrzrUYRtK11bU6UoPDWCe2ngf8RqmTS1-6kSB8iX68"
+            },
+            {
+                "post_placement_company": "Infogain",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQHzCj5jr24FAg/company-logo_400_400/0/1580731750871?e=1678924800&v=beta&t=PzSDKG97C4Kb-oyoW2GhsJUDz7VqjPrw5Wp1532bTKc"
+            },
+            {
+                "post_placement_company": "Valeo",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQF8x8kpXJLBkg/company-logo_400_400/0/1571910608340?e=1678924800&v=beta&t=1keFk_IrISupr-g2k73pBHsvKglpNzvcIJMDPyo7xOc"
+            },
+            {
+                "post_placement_company": "Merit",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQGtO4k9UCIt_g/company-logo_400_400/0/1648730269201?e=1678924800&v=beta&t=xWYGvDn6c_Z8DnXSacgh8D9zGb4kYG6CJR3tSoJ2AEU"
+            },
+            {
+                "post_placement_company": "Stryker",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHa7kowBO7CeQ/company-logo_400_400/0/1519856221451?e=1678924800&v=beta&t=42I9u9T8g9yt6IyvlDIN6clJ-HG8d4Wza7Vz2jKq6I8"
+            },
+            {
+                "post_placement_company": "Energy & Environmental Research Center",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQFEESQZEa6G5g/company-logo_400_400/0/1519905966707?e=1678924800&v=beta&t=IEOheTA5F07rHHWm6i3GOR0ESzxuQh60dBQvxkFSDuQ"
+            },
+            {
+                "post_placement_company": "VFI SLK",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQGgZxu2jOD_hg/company-logo_400_400/0/1583910284080?e=1678924800&v=beta&t=3QAtvoEE9dPgDJgHXXrks0AwoLg7pwTN1PgWjNZh_Ac"
+            },
+            {
+                "post_placement_company": "Abercrombie & Fitch Co.",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQFx459Uz2uR4Q/company-logo_400_400/0/1626809011464?e=1678924800&v=beta&t=6PGqfg4cetc8lIlpCvjsh6NwUFBAVaBV2fE_k6iZk5g"
+            },
+            {
+                "post_placement_company": "Xebia",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQFFFBYtdC3U9g/company-logo_400_400/0/1629278136534?e=1678924800&v=beta&t=XN3FOML8skHj-kx0xck9BewWwBwom0snldwB4KwUFsE"
+            },
+            {
+                "post_placement_company": "Cognizant Technology Solutions",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHRO9T5YA3ouQ/company-logo_400_400/0/1657037248681?e=1678924800&v=beta&t=2ElCWbnG-8Bu-p-qIkM_owUb_RQNMjI0i0WrevvR698"
+            },
+            {
+                "post_placement_company": "Tarrant County Public Health",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHVVDdqOcemDA/company-logo_400_400/0/1524505836537?e=1678924800&v=beta&t=7kX1K77N9U9D75MYuO30GmetMKYfyK3NF5JkHHtV2NY"
+            },
+            {
+                "post_placement_company": "Godrej & Boyce Mfg. Co. Ltd.",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQG1LjUOxB4IMQ/company-logo_400_400/0/1653918257540?e=1678924800&v=beta&t=XVGqt4f9u-zlkGfLf80dBCcj9wS7gGCIMilPGd2F-ao"
+            },
+            {
+                "post_placement_company": "CES",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C510BAQGBKEUZHfHrVg/company-logo_400_400/0/1556099954566?e=1678924800&v=beta&t=2Tkn4HQLRktStmSlRQ12lERmfS8iZCKE1VLXtE-Spz4"
+            },
+            {
+                "post_placement_company": "London Borough of Hillingdon",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQG6P4T3yAXsEQ/company-logo_400_400/0/1519856307278?e=1678924800&v=beta&t=qwH08zL0Tno0p4fwEH-3I1_ZHbM4C-vaNlVP29Kr7jk"
+            },
+            {
+                "post_placement_company": "South Indian Bank",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQGV3xknjCgLKQ/company-logo_400_400/0/1566217763829?e=1678924800&v=beta&t=ONgRVWVBKtelEoe_F8uM3VIVCJbNNqWCQQEb_AH4lXs"
+            },
+            {
+                "post_placement_company": "Whitehat Jr",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQFLb50MjbgEbA/company-logo_400_400/0/1640247611301?e=1678924800&v=beta&t=eeOe43B2Zp_pdp8sv89QZBqfORqPaUbNupbSYlvJ0vs"
+            },
+            {
+                "post_placement_company": "Capita",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/D4E0BAQEw1y7MIbOc6w/company-logo_400_400/0/1667291473338?e=1678924800&v=beta&t=TUN1jZZhleHoHpD6HHECVIGneQjNmAFN4ot8u5HWH7g"
+            },
+            {
+                "post_placement_company": "Elevance Health",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQHUCH2Q9_rJ2A/company-logo_400_400/0/1656408544351?e=1678924800&v=beta&t=Ip5lt1lh3X0J3bLfhXY7rpqtqS-PDe2CGuPw6ruR_i8"
+            },
+            {
+                "post_placement_company": "HubSpot",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQF8H-SLmMDZlA/company-logo_400_400/0/1646683329778?e=1678924800&v=beta&t=rcwq0Zod_Yfa0lobTwe3eJDXt8V3YFAk44_awrpXIhs"
+            },
+            {
+                "post_placement_company": "Public Health Ontario",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQEobV6hrpUbUg/company-logo_400_400/0/1519904339533?e=1678924800&v=beta&t=tfrS4BAQzln6q5S2yeoHF4U76adbZxBqsrvqkdHRiQs"
+            },
+            {
+                "post_placement_company": "Tube Investments of India Limited",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQH8ZrYQPWYXMg/company-logo_400_400/0/1519886087175?e=1678924800&v=beta&t=pXm-8VQ_s8_mL1S7CU2srPSb78bdLOTtMaEjQnxFOeE"
+            },
+            {
+                "post_placement_company": "Zscaler",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQG-7X4Prllf-g/company-logo_400_400/0/1656692699695?e=1678924800&v=beta&t=MttYvd0qd_yn654FCdwYxJ0uqGDhDQPoMK-CywR4TIE"
+            },
+            {
+                "post_placement_company": "Litmus7",
+                "post_placement_company_logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHPYzYaRLYvJg/company-logo_400_400/0/1653291416991?e=1678924800&v=beta&t=eD_ImcNG-65CBfjLscNTipv_LryIlBavffCvWp8PkC0"
+            }
+        ];
+    </script>
+</body>
+
+</html>
